@@ -1,0 +1,39 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: shell
+
+  # Explicitly call as bash
+  #command_interpreter: bash
+
+  # Call with ksh
+  #command_interpreter: ksh
+
+  # Cal with zsh
+  #command_interpreter: zsh
+
+  # Call with tcsh & csh syntax simple bootstrap
+  #command_interpreter: tcsh
+  #script: bootstrap.csh
+  
+  # Execute with a Python script
+  #command_interpreter: python
+  #script: bootstrap.py
+
+  # On Windows, run a script with cmd.exe
+  #command_interpreter: cmd.exe /c
+  #script: bootstrap.cmd
+
+platforms:
+  - name: bento/centos-7.1
+  - name: mwrock/Windows2012R2
+    driver:
+      boot_timeout: 1500
+      guest: :windows
+    transport:
+      name: winrm
+
+suites:
+  - name: default
